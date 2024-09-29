@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="./1.png" alt="Notebook" class="notebook-bg" style="padding-top: 100px;">
+        <div class="notebook-content">
+            <h1 id="appTitle">My Notes</h1>
+            <form id="noteForm">
+                <input type="text" id="noteTitle" placeholder="Note Title" required>
+                <textarea id="noteContent" placeholder="Write your note here..." required></textarea>
+                
+                <label for="titleColor">Title Color:</label>
+                <input type="color" id="titleColor" value="#000000"> <!-- Default color black -->
+                <label for="backgroundColor">Background Color:</label>
+                <input type="color" id="backgroundColor" value="#ffffff"> <!-- Default color white -->
+                <button type="submit">Add Note</button>
+            </form>
+            <div id="notesList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
