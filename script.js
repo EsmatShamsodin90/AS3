@@ -66,7 +66,6 @@ displayNotes();
 // Select form elements
 const fontSelect = document.getElementById('fontSelect');
 
-// ... (existing code)
 
 // Event listener for form submission
 noteForm.addEventListener('submit', function(event) {
