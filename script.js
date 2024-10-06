@@ -15,8 +15,7 @@ function displayNotes() {
     notes.forEach((note, index) => {
         const noteElement = document.createElement('div');
         noteElement.classList.add('note');
-        
-        noteElement.style.textColor = note.textColor;
+        noteElement.style.backgroundColor = note.backgroundColor; // Set background color
         noteElement.innerHTML = `
             <h3 style="color: ${note.titleColor}">${note.title}</h3> <!-- Set title color -->
             <p>${note.content}</p>
@@ -63,8 +62,46 @@ notesList.addEventListener('click', function(event) {
 });
 
 // Initial display of notes
-
+displayNotes();
 // Select form elements
 const fontSelect = document.getElementById('fontSelect');
 
+// ... (existing code)
 
+// Event listener for form submission
+noteForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    const newNote = {
+        title: noteTitle.value,
+        content: noteContent.value,
+        completed: true, // Set the completed status to true by default
+        titleColor: titleColorInput.value, // Get title color
+        backgroundColor: backgroundColorInput.value, // Get background color
+        font: fontSelect.value, // Get selected font
+        date: new Date().toLocaleString() // Get the current date and time
+    };
+    notes.push(newNote); // Add the new note to the notes array
+    localStorage.setItem('notes', JSON.stringify(notes)); // Save notes to localStorage
+    displayNotes(); // Display the updated notes list
+    noteTitle.value = ''; // Clear title input
+    noteContent.value = ''; // Clear content input
+});
+
+// Function to display notes
+function displayNotes() {
+    notesList.innerHTML = ''; // Clear the notes list
+    notes.forEach((note, index) => {
+        const noteElement = document.createElement('div');
+        noteElement.classList.add('note');
+        noteElement.style.backgroundColor = note.backgroundColor; // Set background color
+        noteElement.style.fontFamily = note.font; // Set font for note
+        noteElement.innerHTML = `
+            <h3 style="color: ${note.titleColor}">${note.title}</h3> <!-- Set title color -->
+            <p>${note.content}</p>
+            <p class="note-date">${note.date}</p> <!-- Display date -->
+            <input type="checkbox" ${note.completed ? 'checked' : ''} class="note-checkbox" data-index="${index}">
+            <button class="delete-btn" data-index="${index}">Delete</button>
+        `;
+        notesList.appendChild(noteElement);
+    });
+}
