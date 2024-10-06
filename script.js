@@ -62,7 +62,7 @@ notesList.addEventListener('click', function(event) {
 });
 
 // Initial display of notes
-displayNotes();
+
 // Select form elements
 const fontSelect = document.getElementById('fontSelect');
 
