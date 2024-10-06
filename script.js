@@ -15,7 +15,7 @@ function displayNotes() {
     notes.forEach((note, index) => {
         const noteElement = document.createElement('div');
         noteElement.classList.add('note');
-        noteElement.style.backgroundColor = note.backgroundColor; // Set background color
+        
         noteElement.style.textColor = note.textColor;
         noteElement.innerHTML = `
             <h3 style="color: ${note.titleColor}">${note.title}</h3> <!-- Set title color -->
