@@ -20,21 +20,7 @@ body {
     height: 800px; /* Height of the notebook */
 }
 
-.notebook-bg {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
-}
 
-.notebook-content {
-    position: absolute; /* Absolute positioning within the container */
-    top: 160px; /* Space from the top of the notebook */
-    left: 70px; /* Space from the left of the notebook */
-    right: 40px; /* Space from the right of the notebook */
-    bottom: 40px; /* Space from the bottom of the notebook */
-    padding: 20px; /* Padding for content */
-    overflow-y: auto; /* Allow scrolling if content overflows */
-}
 
 h1 {
     text-align: center; /* Center the title */
