@@ -33,7 +33,6 @@ body {
     right: 40px; /* Space from the right of the notebook */
     bottom: 40px; /* Space from the bottom of the notebook */
     padding: 20px; /* Padding for content */
-    background-color: rgba(100, 100, 100, 0); /* Transparent background */
     overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
