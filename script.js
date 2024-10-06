@@ -43,7 +43,7 @@ noteForm.addEventListener('submit', function(event) {
         date: new Date().toLocaleString() // Get the current date and time
     };
     notes.push(newNote); // Add the new note to the notes array
-    localStorage.setItem('notes', JSON.stringify(notes)); // Save notes to localStorage
+    localStorage.setItem('notes', JSON.stringify(notes)); // Save notes to localStorag
     displayNotes(); // Display the updated notes list
     noteTitle.value = ''; // Clear title input
     noteContent.value = ''; // Clear content input
